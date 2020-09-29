@@ -46,8 +46,9 @@ public class HomeController {
 		return "home";
 		*/
 		List<MemberDTO> memberList = service.selectMember();
+		model.addAttribute("memberList",memberList);
 		
-		return null;
+		return "home";
 		
 	}
 	
