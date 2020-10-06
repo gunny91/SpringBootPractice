@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="bmi" class="com.ghsoft.bmi.BMICalculator">
+	<bean id="bmiCalc" class="com.ghsoft.bmi.BMICalculator">
 		<property name ="lowWeight"	value="18.5"></property>
 		<property name="normal" 	value="23"></property>
 		<property name="overWeight" value="25"></property>
@@ -13,21 +13,20 @@
 	</bean>
 
 	<bean id="myInfo" class="com.ghsoft.bmi.MyInfo">
-		<property name ="name"	value="gunny"></property>
-		<property name="height" 	value="173"></property>
-		<property name="weight" value="73"></property>
+	<property name="name" value="홍길동"></property>
+		<property name="height" value="168"></property>
+		<property name="weight" value="66"></property>
 		<property name="hobby">
 			<list>
-				<value>Killing</value>
-				<value>Rabory</value>
-				<value>Fighitng</value>
+				<value>도둑질</value>
+				<value>남도와주기</value>
+				<value>낮잠자기</value>
 			</list>
-		 </property>
-		 <property name="bmiCalculator">
-		 	<ref bean="bmiCalculator"></ref>
-		 </property>
+		</property>
+		<property name="bmiCalculator">
+			<ref bean="bmiCalc"/>
+		</property>
 	</bean>
-
 
 
 </beans>

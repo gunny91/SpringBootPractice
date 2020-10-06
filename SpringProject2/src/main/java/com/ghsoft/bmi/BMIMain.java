@@ -7,13 +7,15 @@ public class BMIMain {
 
 	public static void main(String[] args) {
 		String conf = "classpath:application.xml";
+		//스프링 컨테이너가 형성됨.
+		AbstractApplicationContext ctx 
+			= new GenericXmlApplicationContext(conf);
 		
-		//Spring Container formed
-		AbstractApplicationContext ctx = new GenericXmlApplicationContext(conf);
+		//스프링 컨테이너에서 컴포넌트를 가져온다.
+		MyInfo myinfo = ctx.getBean("myInfo", MyInfo.class);
+		myinfo.getInfo();
 		
-		//Bring the comphonent from Spring Container
-		MyInfo myinfo = ctx.getBean("myinfo",MyInfo.class);
-
+		//스프링 컨테이너를 종료한다.
+		ctx.close();
 	}
-
 }

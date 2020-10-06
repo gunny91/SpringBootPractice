@@ -1,25 +1,72 @@
 package com.ghsoft.bmi;
 
 public class BMICalculator {
-
-	
-	private double lowWeight;
-	private double normal;
-	private double overWeight;
-	private double obesty;
-
+	private	double	lowWeight;
+	private	double	normal;
+	private	double	overWeight;
+	private	double	obesty;
 	
 	public void bmicalculation(double weight, double height) {
 		double h = height * 0.01;
-		double result = weight/(h*h);
-		System.out.println("BMI rate : " + (int)result);
+		double result = weight / (h*h);
 		
-		if(result > obesty) {System.out.println("Obesty");}
-		else if(result > overWeight) {System.out.println("Over Weight!");}
-		else if (result > normal) {System.out.println("Normal");}
-		else {System.out.println("Get some milk");}
+		System.out.println("BMI 지수 : " + (int)result);
+		
+		if(result > obesty) {
+			System.out.println("비만입니다.");
+		} else if(result > overWeight) {
+			System.out.println("과체중입니다.");
+		} else if(result > normal) {
+			System.out.println("정상입니다.");
+		} else {
+			System.out.println("저체중입니다.");
+		}
+	}
+
+	public double getLowWeight() {
+		return lowWeight;
+	}
+
+	public void setLowWeight(double lowWeight) {
+		this.lowWeight = lowWeight;
+	}
+
+	public double getNormal() {
+		return normal;
+	}
+
+	public void setNormal(double normal) {
+		this.normal = normal;
+	}
+
+	public double getOverWeight() {
+		return overWeight;
+	}
+
+	public void setOverWeight(double overWeight) {
+		this.overWeight = overWeight;
+	}
+
+	public double getObesty() {
+		return obesty;
+	}
+
+	public void setObesty(double obesty) {
+		this.obesty = obesty;
 	}
 	
 	
-	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
