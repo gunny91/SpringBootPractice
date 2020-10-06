@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bmi" class="com.ghsoft.bmi.BMICalculator">
+		<property name ="lowWeight"	value="18.5"></property>
+		<property name="normal" 	value="23"></property>
+		<property name="overWeight" value="25"></property>
+		<property name="obesty" 	value="30"></property>
+	
+	</bean>
+
+	<bean id="myInfo" class="com.ghsoft.bmi.MyInfo">
+		<property name ="name"	value="gunny"></property>
+		<property name="height" 	value="173"></property>
+		<property name="weight" value="73"></property>
+		<property name="hobby">
+			<list>
+				<value>Killing</value>
+				<value>Rabory</value>
+				<value>Fighitng</value>
+			</list>
+		 </property>
+		 <property name="bmiCalculator">
+		 	<ref bean="bmiCalculator"></ref>
+		 </property>
+	</bean>
+
+
+
+</beans>
