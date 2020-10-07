@@ -10,12 +10,13 @@ public class MemberRegisterService {
 	}
 
 	public Long regist(RegisterRequest req) {
-		Member member = memberDAO.selectByEmail(email);
+		Member member = memberDAO.selectByEmail(req.getEmail());
 		if (member != null) {
 			throw new AlreadyExistingMemberException("dup email " + req.getEmail());
 		}
+		
 		Member newMember = new Member(
-				req.getEmail(), req.getPassword(), req.getName(), req.getRegisterDateTime());
+				req.getEmail(), req.getPassword(), req.getName(), new Date());
 		memberDAO.insert(newMember);
 		return newMember.getId();
 	}
