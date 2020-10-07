@@ -3,6 +3,11 @@ package com.ghsoft.bmi;
 import java.util.ArrayList;
 
 public class MyInfo {
+	@Override
+	public String toString() {
+		return "MyInfo [name=" + name + ", height=" + height + ", weight=" + weight + ", hobby=" + hobby
+				+ ", bmiCalculator=" + bmiCalculator + "]";
+	}
 	private	String				name;
 	private	double				height;
 	private	double				weight;
