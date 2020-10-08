@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="memberDao" class="com.ghsoft.di01.spring.MemberDAO"></bean>
+	<bean id="memberRegSvc"
+		class="com.ghsoft.di01.spring.MemberRegisterService">
+		<constructor-arg ref="memberDAO"></constructor-arg>
+	</bean>
+
+	<bean id="changePwSvc"
+		class="com.ghsoft.di01.spring.ChangePasswordService">
+		<constructor-arg ref="memberDAO"></constructor-arg>
+	</bean>
+
+	<bean id="listPrinter"
+		class="com.ghsoft.di01.spring.MemberListPrinter">
+		<constructor-arg ref="memberDAO"></constructor-arg>
+		<constructor-arg ref="memberPrinter"></constructor-arg>
+	</bean>
+
+	<bean id="infoPrinter"
+		class="com.ghsoft.di01.spring.MemberInfoPrinter">
+		<property name="memberDAO" ref="memberDAO" />
+		<property name="printer" ref="memberPrinter" />
+	</bean>
+
+	<bean id="versionPrinter"
+		class="com.ghsoft.di01.spring.VersionPrinter">
+		<property name="majorVarsion" value="5"></property>
+		<property name="minorVarsion" value="3"></property>
+	</bean>
+</beans>

@@ -9,6 +9,12 @@
 	<configs>
 		<config>src/main/resources/META-INF/application.xml</config>
 		<config>src/main/java/com/ghsoft/coffee4/appl.xml</config>
+		<config>src/main/resources/appCtx.xml</config>
+		<config>src/main/resources/appCtx2.xml</config>
+		<config>src/main/resources/appCtx3.xml</config>
+		<config>src/main/resources/conf1.xml</config>
+		<config>src/main/resources/conf2.xml</config>
+		<config>src/main/resources/configimport.xml</config>
 	</configs>
 	<autoconfigs>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
