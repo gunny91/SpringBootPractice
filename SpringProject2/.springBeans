@@ -15,6 +15,11 @@
 		<config>src/main/resources/conf1.xml</config>
 		<config>src/main/resources/conf2.xml</config>
 		<config>src/main/resources/configimport.xml</config>
+		<config>src/main/resources/di2/appCtx1.xml</config>
+		<config>src/main/resources/di2/appCtx2.xml</config>
+		<config>src/main/resources/di2/appCtx3.xml</config>
+		<config>src/main/resources/di2/appCtx4.xml</config>
+		<config>src/main/resources/di2/appCtx5.xml</config>
 	</configs>
 	<autoconfigs>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
