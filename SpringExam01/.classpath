@@ -16,6 +16,7 @@
 	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="src/test/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
@@ -23,6 +24,49 @@
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/TJ/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.0.1/junit-jupiter-api-5.0.1.jar" sourcepath="C:/Users/TJ/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.0.1/junit-jupiter-api-5.0.1-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+			<attribute name="maven.groupId" value="org.junit.jupiter"/>
+			<attribute name="maven.artifactId" value="junit-jupiter-api"/>
+			<attribute name="maven.version" value="5.0.1"/>
+			<attribute name="maven.scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/TJ/.m2/repository/org/springframework/spring-test/5.0.0.RELEASE/spring-test-5.0.0.RELEASE.jar" sourcepath="C:/Users/TJ/.m2/repository/org/springframework/spring-test/5.0.0.RELEASE/spring-test-5.0.0.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-test"/>
+			<attribute name="maven.version" value="5.0.0.RELEASE"/>
+			<attribute name="maven.scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/TJ/.m2/repository/org/springframework/spring-test/5.2.9.RELEASE/spring-test-5.2.9.RELEASE.jar" sourcepath="C:/Users/TJ/.m2/repository/org/springframework/spring-test/5.2.9.RELEASE/spring-test-5.2.9.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-test"/>
+			<attribute name="maven.version" value="5.2.9.RELEASE"/>
+			<attribute name="maven.scope" value="test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/TJ/.m2/repository/org/springframework/spring-test/4.3.3.RELEASE/spring-test-4.3.3.RELEASE.jar" sourcepath="C:/Users/TJ/.m2/repository/org/springframework/spring-test/4.3.3.RELEASE/spring-test-4.3.3.RELEASE-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="spring-test-4.3.3.RELEASE.jar"/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-test"/>
+			<attribute name="maven.version" value="4.3.3.RELEASE"/>
+			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
