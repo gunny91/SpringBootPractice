@@ -1,43 +1,33 @@
 package com.ghsoft.java01.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.ghsoft.java01.spring.MemberDAO;
 import com.ghsoft.java01.spring.MemberInfoPrinter;
 import com.ghsoft.java01.spring.MemberPrinter;
-import com.ghsoft.java01.spring.MemberRegisterService;
 
-@Configuration 
-public class JavaConfig2 {
+@Configuration
+public class ConfigPart2 {
 
-	@Bean
-	public MemberDAO memberDAO() {
-		
-		return new MemberDAO();
-	}
-	// Same as <beab id="memberDAO" class="spring.MemberDAO"/>
-	
-	@Bean
-	public MemberRegisterService memberRegSvc(){
-		return new MemberRegisterService(memberDAO());
-	}
+	@Autowired
+	private MemberDAO memberDAO;
+	//private ConfigPart1 configPart1;
 	
 	@Bean
 	public MemberPrinter printer() {
-		
 		return new MemberPrinter();
 	}
 	
 	@Bean
 	public MemberInfoPrinter infoPrinter() {
 		MemberInfoPrinter info = new MemberInfoPrinter();
-//		info.setMemberDAO(memberDAO());
-//		info.setPrinter(printer());
+		//info.setMemberDAO(configPart1.memberDAO());
+		info.setMemberDAO(memberDAO);
+		info.setPrinter(printer());
+		
 		return info;
 	}
-	
-	
-	
 	
 }

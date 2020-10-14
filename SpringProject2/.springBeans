@@ -20,6 +20,8 @@
 		<config>src/main/resources/di2/appCtx3.xml</config>
 		<config>src/main/resources/di2/appCtx4.xml</config>
 		<config>src/main/resources/di2/appCtx5.xml</config>
+		<config>src/main/resources/sub_config.xml</config>
+		<config>src/main/resources/temp.xml</config>
 	</configs>
 	<autoconfigs>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
