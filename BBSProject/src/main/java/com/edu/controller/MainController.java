@@ -1,5 +1,8 @@
 package com.edu.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -7,6 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.edu.dto.ProductDTO;
 @Controller
 public class MainController {
 
@@ -70,6 +76,48 @@ public class MainController {
 				//dan에 값이 없으면 defaultValue의 값으로 실행한다.
 	}
 	
+	@RequestMapping(value="test.do", method=RequestMethod.GET)
+	public String test() {
+		logger.info("Enter the test controller");
+		
+		return "test/test";
+	}
 	
+//	@RequestMapping("test")
+//	public void test2() {}
+	
+	
+	@RequestMapping(value="test/testA")
+	public String testA(Model model) {
+		
+		model.addAttribute("message", "hello, this is test");		
+		return "test/testA";
+	}
+	
+	@RequestMapping("test/testB")
+	public String testB(Model model) {
+		
+		model.addAttribute("message", "hello, this is test");		
+		return "test/testA";
+	}
+	
+	//forward : address not chage, screen  changed
+	// redirect : address change , screen change, small 'get'way data convey
+	// redirect : Not only out, but also move the different addres from pages
+	
+	/**
+	 * Using ModelAndView : Model( Data repository), view (scree)
+	 * @return
+	 */
+	@RequestMapping("test/testC")
+	public ModelAndView testC() {
+		Map<String, Object> map = new HashMap<String,Object>();
+		
+		map.put("product", new ProductDTO("Apple",100000));
+	//map.put("SmartPhone", new ProductDTO("IPhone 12", 1350000));
+		
+		//new ModelAndWview("view name", "variable name", map)
+		return new ModelAndView("test/testC","map",map);
+	}
 }
 
