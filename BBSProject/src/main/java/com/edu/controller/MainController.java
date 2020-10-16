@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.edu.dto.ProductDTO;
 @Controller
+
 public class MainController {
 
 	
@@ -86,20 +87,32 @@ public class MainController {
 //	@RequestMapping("test")
 //	public void test2() {}
 	
-	
+	/**
+	 * Url pattern and method name is not need to be mattched!
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="test/testA")
 	public String testA(Model model) {
 		
 		model.addAttribute("message", "hello, this is test");		
-		return "test/testA";
+		return "test/testB";
 	}
 	
 	@RequestMapping("test/testB")
 	public String testB(Model model) {
-		
+		logger.info("Enter the test B Page!");
 		model.addAttribute("message", "hello, this is test");		
-		return "test/testA";
+		return "test/testB";
 	}
+	
+//	@RequestMapping("test/testB")
+//	public void testB(Model model) {
+//		logger.info("Enter the test B Page!");
+//		model.addAttribute("message", "hello, this is test");		
+//		
+//	}
 	
 	//forward : address not chage, screen  changed
 	// redirect : address change , screen change, small 'get'way data convey
@@ -118,6 +131,17 @@ public class MainController {
 		
 		//new ModelAndWview("view name", "variable name", map)
 		return new ModelAndView("test/testC","map",map);
+	}
+	
+	@RequestMapping("test/testD")
+	public String testD(){
+		//When we useing Redirect, we need to return type as String!
+		return "redirect:/test/testE";
+	}
+	
+	@RequestMapping("test/testE")
+	public void testE(){
+		
 	}
 }
 
