@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.edu.dto.ProductDTO;
 @Controller
-
 public class MainController {
 
 	

@@ -22,7 +22,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.edu.controller"/>
-	
-	
-	
+	<context:component-scan base-package="com.board.controller"/>
+	<context:component-scan base-package="com.board.service"/>
+	<context:component-scan base-package="com.board.dao"/>
 </beans:beans>
