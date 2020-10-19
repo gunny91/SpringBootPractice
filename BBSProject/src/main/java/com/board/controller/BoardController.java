@@ -58,19 +58,20 @@ public class BoardController {
 		//board/list
 	}
 	
-	@RequestMapping(value="/view", method=RequestMethod.GET)
-		public void getView(@RequestParam("b_no") int b_no, Model model) throws Exception{
-			BoardDTO board =null;
-			board = service.detail(b_no);
+	//게시글 상세 조회
+		@RequestMapping(value="/view", method=RequestMethod.GET)
+		public void getView(@RequestParam("b_no") int b_no, Model model)
+			throws Exception {
+			logger.info("getView() Start.....");
+			//b_no에 해당하는 회원정보를 가져온다.
+			BoardDTO boardDTO = null;
+			boardDTO = service.detail(b_no);
+			logger.info(boardDTO.toString());
 			
-			model.addAttribute("boardDTO",board);
-			
-			
-		
+			//찾아온 회원정보를 View에 넘어갈 때 같이 보낸다.
+			model.addAttribute("boardDTO", boardDTO);
 		}
 	
-	
-	
-	
+		
 	
 }

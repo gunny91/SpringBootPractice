@@ -37,7 +37,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public BoardDTO detail(Integer b_no) throws Exception {
-		return sqlSession.selectOne(namespace +".detail",b_no);
+		return sqlSession.selectOne(namespace +".detailBoard",b_no);
 	}
 
 	@Override
