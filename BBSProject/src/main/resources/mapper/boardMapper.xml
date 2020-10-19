@@ -30,7 +30,7 @@
  	 <!-- Board List 리스트보기 -->
     <select id="listBoard" resultType="com.board.dto.BoardDTO">
     <![CDATA[
-        select * from hello_board 
+        select * from s_board 
         order by b_no DESC
     ]]>
     </select>

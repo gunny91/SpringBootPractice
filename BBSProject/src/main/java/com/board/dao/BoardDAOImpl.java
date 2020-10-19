@@ -36,15 +36,13 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public BoardDTO select(Integer b_no) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public BoardDTO detail(Integer b_no) throws Exception {
+		return sqlSession.selectOne(namespace +".detail",b_no);
 	}
 
 	@Override
 	public List<BoardDTO> listAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList(namespace +".listBoard");
 	}
 
 }

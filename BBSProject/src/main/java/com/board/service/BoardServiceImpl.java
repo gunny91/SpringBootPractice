@@ -29,13 +29,12 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void delete(Integer b_no) throws Exception {
-		// TODO Auto-generated method stub
 		boardDAO.delete(b_no);
 	}
 
 	@Override
-	public BoardDTO select(Integer b_no) throws Exception {
-		return boardDAO.select(b_no);
+	public BoardDTO detail(Integer b_no) throws Exception {
+		return boardDAO.detail(b_no);
 	}
 
 	@Override

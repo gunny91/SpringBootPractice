@@ -1,5 +1,7 @@
 package com.board.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.board.dto.BoardDTO;
 import com.board.service.BoardService;
@@ -38,18 +41,33 @@ public class BoardController {
 		service.insert(board);
 		model.addAttribute("result", "Board Registration is completed");
 		
-		return "/board/success";
+		//return "/board/success";
+		return "redirect:/board/list";
+	
 	}
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public void list(Model model) throws Exception{
 		
 		logger.info("Entered the board list ");	
-		service.listAll();
-		model.addAttribute("result", "Board list is Ready");
+		List<BoardDTO> list = null;
+		
+		list =service.listAll();
+		model.addAttribute("list",list);
+		
 		//board/list
 	}
 	
+	@RequestMapping(value="/view", method=RequestMethod.GET)
+		public void getView(@RequestParam("b_no") int b_no, Model model) throws Exception{
+			BoardDTO board =null;
+			board = service.detail(b_no);
+			
+			model.addAttribute("boardDTO",board);
+			
+			
+		
+		}
 	
 	
 	
