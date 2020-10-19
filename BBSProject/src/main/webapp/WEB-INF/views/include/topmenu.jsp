@@ -15,9 +15,11 @@
 		<div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
+					
+				
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-							컨트롤러연습 <span class="caret"></span>
+							Controller Practice <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
     						<li><a href="${path}/gugu.dan">구구단</a></li>
@@ -30,6 +32,16 @@
     					</ul>
     					
     				</li>
+    				
+    				<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							Board Management <span class="caret"></span>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="${path}/gugu.dan">구구단</a></li>
+							
+							</ul>
+						</li>
     			</ul>
     		</div>
     	</div>
