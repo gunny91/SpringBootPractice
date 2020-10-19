@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1>MY Second Spring web!</h1>
+	<font color="red">The Context Path is:<%=request.getContextPath()%></font>
 </body>
 </html>
