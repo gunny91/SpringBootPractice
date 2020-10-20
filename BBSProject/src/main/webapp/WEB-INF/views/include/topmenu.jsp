@@ -42,6 +42,16 @@
 								<li><a href="${path}/board/list">Board List</a></li>
 							</ul>
 						</li>
+						
+						<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							UpLoading files <span class="caret"></span>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="${path}/upload/uploadForm">Board Register</a></li>
+								<li><a href="${path}/upload/uploadAjax">Board List</a></li>
+							</ul>
+						</li>
     			</ul>
     		</div>
     	</div>

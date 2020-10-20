@@ -17,13 +17,11 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public void insert(BoardDTO boardDTO) throws Exception {
-		// TODO Auto-generated method stub
 		boardDAO.insert(boardDTO);
 	}
 
 	@Override
 	public void update(BoardDTO boardDTO) throws Exception {
-		// TODO Auto-generated method stub
 		boardDAO.update(boardDTO);
 	}
 

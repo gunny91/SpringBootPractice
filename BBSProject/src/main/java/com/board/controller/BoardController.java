@@ -60,8 +60,7 @@ public class BoardController {
 	
 	//게시글 상세 조회
 		@RequestMapping(value="/view", method=RequestMethod.GET)
-		public void getView(@RequestParam("b_no") int b_no, Model model)
-			throws Exception {
+		public void getView(@RequestParam("b_no") int b_no, Model model) throws Exception {
 			logger.info("getView() Start.....");
 			//b_no에 해당하는 회원정보를 가져온다.
 			BoardDTO boardDTO = null;
@@ -72,6 +71,38 @@ public class BoardController {
 			model.addAttribute("boardDTO", boardDTO);
 		}
 	
+		/**
+		 *  Delete board
+		 *  Get the board b_no and give the b_no to service and request to delete the board
+		 * 	when pressed delete, Controller -> Service -> DAO - > Mapper(SQL) - > list.jsp
+		 */
+		@RequestMapping(value="/delete")
+		public String deleteBoard(@RequestParam("b_no") int b_no) throws Exception{
+			 logger.info("delete process is started");
+			 service.delete(b_no);
+			 return "redirect:/board/list";
+		}
 		
+//		@RequestMapping(value="/update", method=RequestMethod.GET)
+//		public void updateGet(BoardDTO board, Model model) throws Exception{logger.info("Entered the updateGet");}
+
+		/**
+		 * 
+		 * @param boardDTO
+		 * @param b_title
+		 * @param b_detail
+		 * @return
+		 * @throws Exception
+		 */
+		@RequestMapping(value="/update", method= {RequestMethod.POST})
+		public void updateBoard(BoardDTO boardDTO ) throws Exception{
+			//,@RequestParam("b_title") String b_title, @RequestParam("b_detail") String b_detail
+			logger.info("Update process is started");
+			logger.info("number"+boardDTO.getB_no());
+			
+			service.update(boardDTO);
+			
+			//return "redirect:board/list";
+		}
 	
 }
