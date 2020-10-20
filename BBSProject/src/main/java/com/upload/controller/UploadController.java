@@ -2,6 +2,7 @@ package com.upload.controller;
 
 
 import java.io.File;
+import java.util.UUID;
 
 import javax.annotation.Resource;
 
@@ -35,13 +36,31 @@ public class UploadController {
 	
 	@RequestMapping(value="/upload/uploadForm",method=RequestMethod.POST)
 	public ModelAndView uploadForm(MultipartFile file, ModelAndView mav) throws Exception{
-		String saveName= file.getOriginalFilename();
-		File target = new File(uploadPath, saveName);
-		
-		FileCopyUtils.copy(file.getBytes(), target);
+		String savedName= file.getOriginalFilename();
+//		File target = new File(uploadPath, saveName);
+//		
+//		FileCopyUtils.copy(file.getBytes(), target);
+//		
+//		mav.setViewName("upload/uploadResult");
+//		mav.addObject("saveName",saveName);
+//		return mav;
+		savedName = uploadFile(savedName, file.getBytes());
 		
 		mav.setViewName("upload/uploadResult");
-		mav.addObject("saveName",saveName);
+		mav.addObject("saveName",savedName);
 		return mav;
+	}
+	
+	private String uploadFile(String orginalName, byte[] fileData) throws Exception {
+		
+		UUID uid = UUID.randomUUID();
+		String savedName = uid.toString()+"_"+ orginalName;
+		
+		//new file(directory, filename)
+		File target = new File(uploadPath, savedName);
+		
+		//Move the file to directory that we assigned
+		FileCopyUtils.copy(fileData, target);
+		return savedName;
 	}
 }
