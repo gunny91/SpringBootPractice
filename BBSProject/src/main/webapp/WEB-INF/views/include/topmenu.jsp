@@ -50,6 +50,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="${path}/upload/uploadForm">Board Register</a></li>
 								<li><a href="${path}/upload/uploadAjax">Board List</a></li>
+								<li><a href="${path}/upload/address">Address Search</a></li>
 							</ul>
 						</li>
     			</ul>

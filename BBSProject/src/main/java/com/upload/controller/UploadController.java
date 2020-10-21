@@ -51,6 +51,7 @@ public class UploadController {
 		return mav;
 	}
 	
+	@RequestMapping(value="@RequestMapping(value=\"/upload/uploadForm\",method=RequestMethod.POST)address")
 	private String uploadFile(String orginalName, byte[] fileData) throws Exception {
 		
 		UUID uid = UUID.randomUUID();
@@ -62,5 +63,11 @@ public class UploadController {
 		//Move the file to directory that we assigned
 		FileCopyUtils.copy(fileData, target);
 		return savedName;
+	}
+	
+	@RequestMapping(value="/upload/address")
+	private String findAddress() throws Exception {
+		
+		return "/upload/address";
 	}
 }
