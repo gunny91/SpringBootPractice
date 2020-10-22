@@ -9,6 +9,6 @@ public class TestController {
 	
 	@RequestMapping("/test")
 	public String jspTest() {
-		return "test";
+		return "/test";
 	}
 }
