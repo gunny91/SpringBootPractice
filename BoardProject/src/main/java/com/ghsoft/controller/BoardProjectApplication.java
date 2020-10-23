@@ -8,7 +8,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 /*
  * @SpringBootApplication
@@ -25,9 +26,9 @@ import org.springframework.context.annotation.ComponentScan;
  */
 
 
-@SpringBootApplication
-@ComponentScan({"com.ghsoft.board.service"})
-@MapperScan(value= {"com.ghsoft.mapper"})
+@SpringBootApplication(scanBasePackages = {"com.ghsoft"})
+//@ComponentScan({"com.ghsoft.board.service"})
+@MapperScan(value = {"com.ghsoft.mapper"})
 public class BoardProjectApplication {
 
 	public static void main(String[] args) {
@@ -48,9 +49,7 @@ public class BoardProjectApplication {
 		
 		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
 		//application.properties에 기술된 DataSource를 주입한다.
-		sessionFactory.setDataSource(dataSource);
-		
-		
+		sessionFactory.setDataSource(dataSource);		
 		return sessionFactory.getObject();
 	}
 }

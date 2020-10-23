@@ -9,7 +9,7 @@
 </head>
 <body>
 	<%@ include file="../include/topmenu.jsp" %>
-	<table class="table talbe-boardered table-striped table-jover">
+	<table class="table talbe-boardered table-striped table-hover">
 		<thead>
 			<tr>
 				<td>Number</td>
