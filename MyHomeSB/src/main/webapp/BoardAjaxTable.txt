@@ -1,0 +1,24 @@
+BOARD
+public class BoardDTO 
+	private		int		bno;		//게시글 일련번호
+	private		String	subject;	//게시글 제목
+	private		String	content;	//게시글 내용
+	private		String	writer;		//게시글 작성자
+	private		Date	reg_date;	//게시글 작성일시
+
+COMMENT
+public class CommentDTO 
+	private		int			cno;		//댓글 일련번호
+	private		int			bno;		//댓글이 달릴 게시글의 일련번호
+	private		String		content;	//댓글의 내용
+	private		String		writer;		//댓글 작성자
+	private		Date		reg_date;	//댓글 작성 일시
+
+FILES
+public class FileDTO 
+	private		int			fno;			// 파일 일련번호
+	private		int			bno;			// 게시글 번호
+	private		String		fileName;		// 저장될 파일명
+	private		String		fileOriName;	// 원래 파일명
+	private		String		fileUrl;		// 파일의 위치
+
