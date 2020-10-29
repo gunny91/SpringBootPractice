@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/home">HOME</a>
+			<a class="navbar-brand" href="/board/list">HOME</a>
 		</div>
 		<!-- 실질적인 메뉴를 나열한다. -->
 		<div class="collapse navbar-collapse" id="MyMenu">

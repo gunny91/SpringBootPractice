@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html layout:decorator="layout/default" xmlns:layout="http://www.thymeleaf.org/" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>thymeleaf</title>
+</head>
+<body>
+		<h1>Thymeleaf 5</h1>
+	
+	<script th:inline="javascript">
+	//<![DATA[
+		var result = /*[[${result}]]*/ null;
+		document.write("<h1>"+result+"</h1>");
+	//]]>
+	</script>
+		<table border="1" th:with="target=u01">
+			<tr>
+				<td>Index</td>
+				<td>Size</td>
+				<td>ODD / Even</td>
+				<td>ID</td>
+				<td>Name</td>
+				<td>Date</td>
+			</tr>
+			<tr th:each="member, iterState:${list}">
+				<td th:if="${member.mid}">
+					<a href="/modify" th:if="${member.mid ==target}">Modify</a>
+					<p th:unless="${member.mid == target}">View</p>
+				</td>
+				
+				<td th:text="${member.mid == target? 'Good': member.mid}"></td>
+				<td th:text="${member.mname}"></td>
+				<td th:text="${#dates.format(member.regdate,'yyyy-MM-dd')}"></td>
+			</tr>
+		</table>
+		
+		<hr>
+		
+		<h1>Working? th:text=${greeting}</h1>
+		
+</body>
+</html>

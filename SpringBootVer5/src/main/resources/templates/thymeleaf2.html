@@ -1,0 +1,21 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>thymeleaf</title>
+</head>
+<body>
+		<h1>Thymeleaf</h1>
+		<h1 th:text="${dto}">  Got the Data!</h1>
+		<div th:utext='${"<h3>" + dto.mid + "</h3>"}'></div>
+		<div th:utext='${"<h3>" + dto.mid + "</h3>"}'></div>
+		
+		
+		
+		
+		<h1>Working? th:text=${greeting}</h1>
+		
+</body>
+</html>

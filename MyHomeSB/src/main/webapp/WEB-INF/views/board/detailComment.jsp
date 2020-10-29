@@ -65,9 +65,11 @@
 
 </div>
 
+<!-- 댓글 목록 -->
+<%@ include file="commentAction.jsp" %>
+
 </body>
 
-<%@ include file="commentAction.jsp" %>
 </html>
 
 </layoutTag:layout>

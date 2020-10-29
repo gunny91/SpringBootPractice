@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.edu.board.mapper.BoardMapper">
 
 	<select id="boardCount" resultType="int">
-	SELECT	COUNT(*)
-	FROM	BOARD
+	SELECT COUNT(*)
+	FROM BOARD
 	</select>
 
 	<insert id="boardInsert" parameterType="com.edu.board.domain.BoardDTO" useGeneratedKeys="true" keyProperty="bno">
@@ -28,7 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	FROM	BOARD
 	</select>
 
-	<!-- 게시글 번호에 해당하는 자료를 추출한다. -->
+	<!-- 게시글 번호에 해당하는 자료를 추출한다.  받는건 파라메터, 보내는건 리졀트 타입-->
 	<select id="boardDetail" parameterType="int" resultType="com.edu.board.domain.BoardDTO">
 	SELECT	*
 	FROM	BOARD

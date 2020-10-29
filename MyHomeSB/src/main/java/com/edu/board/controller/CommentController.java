@@ -25,7 +25,7 @@ public class CommentController {
 	@RequestMapping("/insert")
 	@ResponseBody
 	private int mCommentServiceInsert(@RequestParam int bno, @RequestParam String content) throws Exception {
-		System.out.println("mCommentServiceInsert");
+		System.out.println("mCommentServiceInsert.....");
 		System.out.println("bno["+bno+"]");
 		System.out.println("content["+content+"]");
 		
@@ -41,7 +41,7 @@ public class CommentController {
     @RequestMapping("/list/{bno}") 
     @ResponseBody
     private List<CommentDTO> mCommentServiceList(@PathVariable int bno, Model model) throws Exception{
-        
+		System.out.println("mCommentServiceList.....");
        return mCommentService.commentListService(bno);
     }
 	
