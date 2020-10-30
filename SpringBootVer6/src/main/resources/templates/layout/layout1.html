@@ -1,5 +1,6 @@
 <!doctype html>
-<html xmlns:th="http//www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
   <meta charset="utf-8">
@@ -12,58 +13,54 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <link rel="manifest" href="site.webmanifest">
+  <!--  <link rel="manifest" href="site.webmanifest">
+  -->
+  
+  
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="@{/css/normalize.css}">
-  <link rel="stylesheet" href="@{/css/main.css}">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" th:href="@{/css/normalize.css}">
+  <link rel="stylesheet" th:href="@{/css/main.css}">
 
   <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
-	
-	<!--  Content body -->
-	<div layout:fragment="content">
-		
+	<!-- content body -->
+	<!-- 페이지 제작시 변경되는 영역 : 눈에 보이는 영역 -->
+	<div class="page-header">
+		<h1>Spring Boot Project <small>for Spring MVC + JPA</small></h1>
+	</div>
+	<div class="panel panel-default" layout:fragment="content">
+		<div class="panel-body">웹 게시판 목록 페이지</div>
 	</div>
 	
-	<div class="panel-heading">
-		<h1>Springboot project</h1>
-	</div>
-	<div class="panel-body">
-		<h2>show the list </h2>
-	</div>
-	
-	
-	<!-- Jquery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
   <!-- Add your site or application content here -->
   <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="@{/js/vendor/modernizr-3.11.2.min.js}"></script>
-  <script src="@{/js/plugins.js}"></script>
-  <script src="@{/js/main.js}"></script>
+  
+  <!-- jQuery 추가 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <script th:src="@{/js/vendor/modernizr-3.11.2.min.js}"></script>
+  <script th:src="@{/js/plugins.js}"></script>
+  <script th:src="@{/js/main.js}"></script>
+  
+  <!-- BootStrap 추가 -->
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-
-	<!-- No tag area -->
-	<th:block layout:fragment="script"></th:block>
-	
-	<th:block layout:fragment="script">
-		<script th:inline="javascript"> 
-			$(document).ready(function(){
-				alert("Page is started");
-			});
-		</script>
-	</th:block>
-	
-	
-	
-
-
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>  
+  
+  <!-- 아무런 태그가 없는 영역을 표시할 때 사용 -->
+  <!-- 매 페이지에서 필요한 javascript 코드를 넣어주는 custom javascript 영역 -->
+  <th:block layout:fragment="script"></th:block>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
@@ -74,3 +71,12 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
