@@ -1,10 +1,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<title>Thymeleaf3</title>
+<title>sample 8</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+	
+	<div th:insert="~{fragments/header::header}"></div>
 	
 	<div>
 	<ul>
@@ -17,5 +19,6 @@
 	</ul>
 	</div>
 	
+	<div th:insert="~{fragments/footer::footer}"></div>
 </body>
 </html>

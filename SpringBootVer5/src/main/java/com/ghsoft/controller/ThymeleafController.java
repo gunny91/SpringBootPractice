@@ -97,6 +97,10 @@ public class ThymeleafController {
 		
 	}
 	
+	@GetMapping("/sample/temp")
+	public void temp() {
+		
+	}
 	
 	
 }
