@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(value= {"com.edu.board.mapper"})
+@MapperScan(value= {"com.edu.board.mapper", "com.edu.member.mapper"}) //mapping
 public class MyHomeSbApplication {
 
 	public static void main(String[] args) {

@@ -30,5 +30,5 @@ public class UserServiceImpl implements UserService{
 		
 		return userDAO.login(loginDTO);
 	}
-
+	
 }

@@ -20,7 +20,6 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public void insertUser(UserDTO userDTO) throws Exception {
 		sqlSession.insert(namespace+".insertUser",userDTO);
-
 	}
 
 	@Override
