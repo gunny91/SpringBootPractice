@@ -7,11 +7,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- ID check -->
 	<select id="idCheck" resultType="int">
-	select count(*) from member where userid = #{userid} 
+		select count(*) from member where userid = #{userid}
+	</select>
+
+
+	<insert id="register">
+		insert into member(userid, userpw,name)
+		values(#{userid}, #{userpw}, #{name})
+	</insert>
+
+	<!-- Login Check -->
+	<!-- ID check -->
+	<select id="login" resultType="com.edu.member.domain.MemberDTO">
+		select userid, userpw, name from member where userid = #{userid} and userpw = #{userpw}
 	</select>
 	
+	<!-- Update member info -->
+	<update id="memberUpdate">
+		update member set userpw= #{userpw}, name=#{name} where userid=#{userid} 
+	</update>
 	
-	<insert id="register">
-		insert into member(userid, userpw,name) values(#{userid}, #{userpw}, #{name})
-	</insert>
+	<delete id="memberDelete">
+		delete from member where userid =#{userid} and userpw=#{userpw}
+	
+	</delete>
 </mapper>

@@ -31,7 +31,22 @@ public class MemberService {
 		logger.info("MemberService register()...");	
 		memberMapper.register(memberDTO);
 	}
+
+	public MemberDTO login(MemberDTO memberDTO) throws Exception {
+		logger.info("MemberService  login()...");	
+		
+		return memberMapper.login(memberDTO);
+	}
+
+	public void memberUpdate(MemberDTO memberDTO) throws Exception {
+		logger.info("MemberService  memberUpdate...");	
+		memberMapper.memberUpdate(memberDTO);
+	}
 	
+	public void memberDelete(MemberDTO memberDTO) throws Exception{
+		logger.info("MemberService memberDelete...");
+		memberMapper.memberDelete(memberDTO);
+	}
 	
 
 }

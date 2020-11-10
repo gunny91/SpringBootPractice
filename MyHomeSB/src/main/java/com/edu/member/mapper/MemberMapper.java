@@ -20,4 +20,15 @@ public interface MemberMapper {
 	 * 
 	 */
 	public void register(MemberDTO memberDTO) throws Exception;
+
+	/**
+	 * Login method to check ID and Password from DB and GUI form 
+	 * @param memberDTO
+	 * @return 
+	 */
+	public MemberDTO login(MemberDTO memberDTO) throws Exception;
+
+	public void memberUpdate(MemberDTO memberDTO) throws Exception;
+	
+	public void memberDelete(MemberDTO memberDTO) throws Exception;
 }
