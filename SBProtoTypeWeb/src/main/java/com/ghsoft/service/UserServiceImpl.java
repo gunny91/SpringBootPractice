@@ -4,7 +4,6 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.ghsoft.domain.LoginDTO;
 import com.ghsoft.domain.UserDTO;
 import com.ghsoft.persistence.UserDAO;
 
@@ -25,9 +24,11 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public UserDTO login(LoginDTO loginDTO) throws Exception {
+	public UserDTO login(UserDTO userDTO) throws Exception {
 		
-		return userDAO.login(loginDTO);
+		return userDAO.login(userDTO);
 	}
+
+	
 	
 }

@@ -1,6 +1,5 @@
 package com.ghsoft.persistence;
 
-import com.ghsoft.domain.LoginDTO;
 import com.ghsoft.domain.UserDTO;
 
 
@@ -13,11 +12,7 @@ public interface UserDAO {
 	 */
 	public void insertUser(UserDTO user) throws Exception;
 	
-	 /**
-	  * User Login 
-	  * @param loginDTO
-	  * @return
-	  * @throws Exception
-	  */
-    public UserDTO login(LoginDTO loginDTO) throws Exception;
+
+	public UserDTO login(UserDTO userDTO) throws Exception; 
+
 }

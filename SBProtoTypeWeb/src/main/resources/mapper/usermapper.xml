@@ -8,7 +8,10 @@
 		insert into user_table(user_id, user_pw,user_name) values(#{userId},#{userPw}, #{userName})
 	</insert>
 	
+	
+		<!-- Login Check -->
+	<!-- ID check -->
 	<select id="login" resultType="com.ghsoft.domain.UserDTO">
-		select * from user_table where user_id = #{userId}
+		select user_id, user_pw, user_name from user_table where user_id = #{userId} and user_pw = #{userPw}
 	</select>
 </mapper>
