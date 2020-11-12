@@ -191,4 +191,41 @@ public class MemberController {
 		return "redirect:/member/login";
 	}
 
+	/**
+	 * Sign up id check
+	 * 
+	 * @return member.registerAjaxl link
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/registerAjax", method = RequestMethod.GET)
+	public String getRegisterAjax() throws Exception {
+
+		logger.info("MemberController get RegisterAjax get");
+		return "/member/registerAjax";
+	}
+
+	
+	/**
+	 * Sign up id check Post
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/registerAjax", method = RequestMethod.POST)
+	public String postRegisterAjax(MemberDTO memberDTO) throws Exception {
+
+		logger.info("MemberController get RegisterAjax Post");
+		
+		//ID check if id exist, return 1 otherwise return 0
+		int result = memberService.idCheck(memberDTO);
+		
+		try {
+			if(result ==1) {return "/member/registerAjax";}
+			else if(result==0){ memberService.register(memberDTO);}
+		}catch(Exception e){
+			e.printStackTrace();
+			//throw new RunTimeException();
+		}
+		return "/member/registerAjax";
+	}
+
 }

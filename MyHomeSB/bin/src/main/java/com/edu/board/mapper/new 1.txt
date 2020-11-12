@@ -1,0 +1,44 @@
+
+
+ public class BookDAO{
+
+	
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+
+	try{
+		String jdbcDriver = "jdbc:mysql://localhost:3306/tempdb? userUnicode=true&characterEncoding=utf8";
+		String dbUser = "master";
+		String dbPass = "1234";
+		//JDBC Driver Loading
+		Class.forName("com.mysql.jdbc.Driver");
+		String query = "insert into book values(?,?,?,?,?,?,?,?,?,?,?,?)";
+		
+		//db connection 
+		conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
+		
+		// statement
+			pstmt =conn.prepareStatement(query);
+			pstmt.setInt		( 1, book.getBook_id());
+			pstmt.setString		( 2, book.getBook_kind());
+			pstmt.setString		( 3, book.getBook_title());
+			pstmt.setInt		( 4, book.getBook_price());
+			pstmt.setShort		( 5, book.getBook_count());
+			pstmt.setString		( 6, book.getAuthor());
+			pstmt.setString		( 7, book.getPublishing_com());
+			pstmt.setString		( 8, book.getPublishing_date());
+			pstmt.setString		( 9, book.getBook_content());
+			pstmt.setByte		(10, book.getDiscount_rate());
+			pstmt.setTimestamp	(11, book.getReg_date());
+			pstmt.setString	(12, book.getBook_image());
+		
+			return pstmt.executeUpdate();
+
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if(pstmt != null) try {pstmt.close(); } catch(SQLException ex) {}
+			if(conn  != null) try {conn.close();  } catch(SQLException ex) {}
+		}
+
+}	
