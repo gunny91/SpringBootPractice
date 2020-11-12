@@ -7,9 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.ghsoft.user.dto.LoginDTO;
-import com.ghsoft.user.dto.UserDTO;
-import com.ghsoft.user.service.UserService;
+import com.ghsoft.domain.LoginDTO;
+import com.ghsoft.domain.UserDTO;
+import com.ghsoft.service.UserService;
 
 @Controller
 public class UserController {

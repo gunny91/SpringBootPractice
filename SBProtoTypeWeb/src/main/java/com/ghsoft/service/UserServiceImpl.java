@@ -1,13 +1,12 @@
-package com.ghsoft.user.service;
+package com.ghsoft.service;
 
-import javax.annotation.Resource;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.ghsoft.user.dto.LoginDTO;
-import com.ghsoft.user.dto.UserDTO;
-import com.ghsoft.user.persistence.UserDAO;
+import com.ghsoft.domain.LoginDTO;
+import com.ghsoft.domain.UserDTO;
+import com.ghsoft.persistence.UserDAO;
 
 @Service
 public class UserServiceImpl implements UserService{

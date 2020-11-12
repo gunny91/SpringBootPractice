@@ -1,12 +1,12 @@
-package com.ghsoft.user.persistence;
+package com.ghsoft.persistence;
 
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.ghsoft.user.dto.LoginDTO;
-import com.ghsoft.user.dto.UserDTO;
+import com.ghsoft.domain.LoginDTO;
+import com.ghsoft.domain.UserDTO;
 
 @Repository
 public class UserDAOImpl implements UserDAO {

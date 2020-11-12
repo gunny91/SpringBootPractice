@@ -1,4 +1,4 @@
-package com.ghsoft.user.dto;
+package com.ghsoft.domain;
 
 import java.util.Date;
 
