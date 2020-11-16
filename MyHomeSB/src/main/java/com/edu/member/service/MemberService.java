@@ -10,7 +10,7 @@ import com.edu.member.controller.MemberController;
 import com.edu.member.domain.MemberDTO;
 import com.edu.member.mapper.MemberMapper;
 
-@Repository("com.edu.member.service.MemberService")
+@Repository
 public class MemberService {
 
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
