@@ -1,15 +1,16 @@
 package com.ghsoft.controller;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ghsoft.domain.UserDTO;
@@ -18,15 +19,16 @@ import com.ghsoft.service.UserService;
 @Controller
 public class UserController {
 	
+	@Autowired
 	private UserService userService;
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
-
+	
 
 	
-	@Inject
-	public UserController(UserService userService) {
-		this.userService = userService;
-	}
+//	@Inject
+//	public UserController(UserService userService) {
+//		this.userService = userService;
+//	}
 
 	@RequestMapping("/")
 	public String homeTemp(Model model) {
@@ -73,6 +75,18 @@ public class UserController {
 //		
 //	}
 //	
+	
+	@ResponseBody
+	@RequestMapping(value = "/idCheck", method = RequestMethod.POST)
+	public int idCheck(UserDTO userDTO) throws Exception {
+
+		logger.info("MemberCOntroller" + userDTO);
+
+		int result = userService.idCheck(userDTO);
+		logger.info("MemberController Return Value " + result);
+		return result;
+	}
+	
 	@RequestMapping(value = "/user/logIn", method = RequestMethod.GET)
 	public String getLogin() throws Exception {
 
@@ -89,20 +103,27 @@ public class UserController {
 	@RequestMapping(value = "/user/logIn", method = RequestMethod.POST)
 	public String postLogin(UserDTO userDTO, HttpServletRequest req, RedirectAttributes rttr) throws Exception {
 
-		logger.info("MemberController login POST.....");
+		logger.info("UserController login POST.....");
 
 		HttpSession session = req.getSession();
-		//// logger.info("MemberController login POST session : " + session);
+		 logger.info("UserController login POST session : " + session.toString());
 
 		// 넘겨받은 회원정보를 가지고 서비스에게 의뢰를 한다.
-		UserDTO login = userService.login(userDTO);
-		logger.info("MemberController Return Value : " + login);
+		//UserDTO login = userService.login(userDTO);
+			UserDTO login = userService.signin(userDTO);
+		logger.info("UserController Return Value : " + login);
 
+		
+		
+
+		
+		
+		
 		//////////////////////////////////////////////////////////
 		// When there is no member info
 		if (login == null) {
 			session.setAttribute("member", null);
-
+			logger.info("UC Return null!!!!!!!!!!!!!! : " + login);
 			// rttr.addAttribute() this will variable name or value will exposure at the
 			// https address
 			// rttr.addAttribute("msg",false);
@@ -133,6 +154,10 @@ public class UserController {
 	}
 
 	
-	
+	@RequestMapping("/temp")
+	public String addressTemp(Model model) {
+		model.addAttribute("address", "This is Home page");
+		return "/temp/address";
+	}
 	
 }

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-        
-<mapper namespace="com.ghsoft.mapper.usermapper">
-	<insert id="insertUser" >
-		insert into user_table(user_id, user_pw,user_name) values(#{userId},#{userPw}, #{userName})
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ghsoft.mapper.UserMapper">
+	<insert id="register">
+		insert into user_table(userid, userpw,
+		username) values(#{userId},#{userPw}, #{userName})
 	</insert>
-	
-	
-		<!-- Login Check -->
+
+	<!-- Login Check -->
 	<!-- ID check -->
-	<select id="login" resultType="com.ghsoft.domain.UserDTO">
-		select user_id, user_pw, user_name from user_table where user_id = #{userId} and user_pw = #{userPw}
+	<select id="singin" resultType="com.ghsoft.domain.UserDTO">
+		select * from user_table where
+		userid = #{userId} and userpw = #{userPw}
 	</select>
 </mapper>

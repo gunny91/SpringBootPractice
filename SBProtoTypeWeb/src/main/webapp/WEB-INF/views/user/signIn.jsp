@@ -108,7 +108,7 @@
 			</c:if>
 			</form>
 		</div>
-	</div>
+
 	
 	
 		<script>

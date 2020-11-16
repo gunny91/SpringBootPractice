@@ -9,8 +9,6 @@ public class UserDTO {
 	private String userName;
 	private Date regdate;
 
-	
-	
 	public String getUserId() {
 		return userId;
 	}
