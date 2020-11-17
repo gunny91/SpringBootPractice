@@ -2,26 +2,25 @@ package com.ghsoft.domain;
 
 import java.util.Date;
 
-public class BoardDTO {
+public class CommentDTO {
 
 	
-	
-	private		int		bno;		//게시글 일련번호
-	private		String	subject;	//게시글 제목
-	private		String	content;	//게시글 내용
-	private		String	writer;		//게시글 작성자
-	private		Date	reg_date;	//게시글 작성일시
+	private		int			cno;		//댓글 일련번호
+	private		int			bno;		//댓글이 달릴 게시글의 일련번호
+	private		String		content;	//댓글의 내용
+	private		String		writer;		//댓글 작성자
+	private		Date		reg_date;	//댓글 작성 일시
+	public int getCno() {
+		return cno;
+	}
+	public void setCno(int cno) {
+		this.cno = cno;
+	}
 	public int getBno() {
 		return bno;
 	}
 	public void setBno(int bno) {
 		this.bno = bno;
-	}
-	public String getSubject() {
-		return subject;
-	}
-	public void setSubject(String subject) {
-		this.subject = subject;
 	}
 	public String getContent() {
 		return content;
@@ -42,10 +41,11 @@ public class BoardDTO {
 		this.reg_date = reg_date;
 	}
 	
+	
 	@Override
 	public String toString() {
-		return "BoardDTO [bno=" + bno + ", subject=" + subject + ", content=" + content + ", writer=" + writer
-				+ ", reg_date=" + reg_date + "]";
+		return "CommentDTO [cno=" + cno + ", bno=" + bno + ", content=" + content + ", writer=" + writer + ", reg_date="
+				+ reg_date + "]";
 	}
 	
 	
