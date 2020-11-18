@@ -18,6 +18,9 @@
 	    color: rgb(255, 255, 255);
 	    background-color: red
 	}
+	.checked {color:orange};
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 	</style>
 </head>
 <body>
@@ -48,9 +51,39 @@
 			</c:forEach>
 		<tbody>
 		</tbody>
+		
 	</table>
-
+	<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a class="active" href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
 </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div id = "rating1">
+ <span class="fa fa-star"></span>
+ <span class="fa fa-star"></span>
+ <span class="fa fa-star"></span>
+ <span class="fa fa-star"></span>
+ <span class="fa fa-star"></span>
+ </div>
+ </body>
+ </html>
+
+<script>
+$('.fa-star').click(function(){
+    var i = $(this).index();
+    $('.checked').removeClass('checked');
+    $('.fa-star:lt('+(i+1)+')').addClass('checked');
+});
+
+</script>
+
 
 </body>
 
