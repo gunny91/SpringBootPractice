@@ -35,6 +35,11 @@ public class UserController {
 		model.addAttribute("homepage", "This is Home page");
 		return "/temp/home";
 	}
+	
+	@RequestMapping("/chat")
+	public String chatMain() {
+		return "/client/chat";
+	}
 
 	@RequestMapping(value = "/user/signIn", method = RequestMethod.GET)
 	public String userSignUp(Model model) {
