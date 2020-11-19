@@ -30,7 +30,7 @@
       <li><a href="#">Page 2</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    <li><a href="/chat"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    <li><a href="/chat"><span class="glyphicon glyphicon-envelope"></span> Chat</a></li>
       <li><a href="/user/signUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="/user/signIn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
